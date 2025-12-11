@@ -1,0 +1,43 @@
+{% load static %}
+<head>
+        <link rel="stylesheet" class="dropdown-item" href="{% static 'css/urls_cabecera.css' %}" />
+</head>
+
+
+
+<div id="lista_urls" class="sticky-top">
+    <div class="btn-group">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            URLs 1
+        </button>
+        <ul class="dropdown-menu">
+            <li><a >AQUI IRAN LAS URL</a></li>
+        </ul>
+    </div>
+
+
+    <!-- REGISTRO Y LOGIN DEL USUARIO-->
+    <div class="btn-group">
+        {% if not requested.user.is_authenticated %}
+        <button class="btn btn-secondary" type="button"data-bs-auto-close="outside" aria-expanded="false">
+                <a class="dropdown-item" href="{% url "login" %}">Login</a>
+        </button>
+        {% endif %}
+
+        {% if not requested.user.is_authenticated %}
+        <button class="btn btn-secondary" type="button"data-bs-auto-close="outside" aria-expanded="false">
+                <a class="dropdown-item" href="{% url "registrar_usuario" %}">Registro</a>
+        </button>
+        {% endif %}
+
+        {% if requested.user.is_authenticated %}
+        <form action="{% url 'cerrar_sesion' %}" method="post">
+            {% csrf_token %}
+            <button class="btn btn-secondary" type="submit" data-bs-auto-close="outside" aria-expanded="false">
+                Cerrar Sesión
+            </button>
+        </form>
+        {% endif %}
+
+    </div>    
+</div>

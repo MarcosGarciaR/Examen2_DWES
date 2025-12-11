@@ -1,0 +1,59 @@
+#lista_urls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: rgb(44, 62, 80); /* Fondo cabecera */
+    padding: 15px;
+}
+
+/* Botones del menú */
+#lista_urls .btn {
+    background-color: rgb(44, 62, 80);
+    border-color: rgb(44, 62, 80);
+    color: white;
+}
+
+#lista_urls .btn:hover, #lista_urls .btn:focus {
+    background-color: rgb(38, 53, 69);
+    border-color: rgb(38, 53, 69);
+    color: white;
+}
+
+/* Menú desplegable */
+.dropdown-menu {
+    background-color: rgb(44, 62, 80);
+    color: white;
+    border: none;
+}
+
+/* Items del submenu */
+.dropdown-item {
+    color: white;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+    background-color: rgb(38, 53, 69);
+    color: white;
+}
+
+/* Submenús laterales */
+.dropdown-menu .dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-menu .dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    background-color: rgb(44, 62, 80);
+    margin-left: .1rem;
+    margin-right: .1rem;
+}
+
+/* Flecha de submenú (si la agregas con dropdown-toggle) */
+.dropdown-toggle::after {
+    color: white;
+}
+#botones_cabecera {
+    text-align: center;
+    padding: 10px;
+}

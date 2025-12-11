@@ -1,0 +1,38 @@
+{% load django_bootstrap5 %}
+
+<html>
+    {% load static %}
+    <head>
+        {% block titulo %}
+        <title>CampNatur</title>
+        {% endblock %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+        <link rel="stylesheet" href="{% static 'css/cabecera.css' %}"/>
+        
+        <script src="{% static 'javascript/Desplegables.js' %}"></script>
+    </head>
+<header >
+    {% block cabecera %}
+        <div id="cabecera">
+            <img src="{% static 'imagenes/logo_web.png' %}" href="index.html">
+            <h1>Gestión de campings</h1>
+        </div>
+    {% endblock %}
+    
+    {% block cabecera_extra %}
+    {% endblock %}
+    
+</header>
+    {% include "cabecera_urls.html" %}
+<body>
+    {% bootstrap_messages %}
+    {% block contenido %}
+    {% endblock %}
+</body>
+<footer>
+    <a href="https://docs.djangoproject.com/en/5.1/ref/templates/builtins/"></a>
+    {% include "pie_de_pag.html" %}
+</footer>
+
+</html>
