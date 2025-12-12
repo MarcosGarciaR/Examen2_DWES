@@ -1,0 +1,11 @@
+<div>
+    <h2>{{ farmaco.nombre }}</h2>
+    <p>Disponible para ensayo: 
+        {% if farmaco.disponible_para_ensayo %}
+            Sí
+        {% else %}
+            No
+        {% endif %}
+    </p>
+    
+</div>

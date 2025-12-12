@@ -13,27 +13,10 @@
 <form method="POST" action="{% url 'registrar_usuario' %}">
 
     {% csrf_token %}
-    <h2>Datos de Persona</h2>
-    {% bootstrap_form formPersona %}
+    <h2>Datos del usuario</h2>
+    {% bootstrap_form formRegistro %}
 
-    <h2>Datos de Usuario</h2>
-    {% bootstrap_form formUsuario %}
-
-    <h2>Rol del usuario</h2>
-    <div>
-        <h3>Datos de Recepcionista</h3>
-        {% bootstrap_form formRecepcionista %}
-    </div>
-
-    <div>
-        <h3>Datos de Cuidador</h3>
-        {% bootstrap_form formCuidador %}
-    </div>
     
-    <div >
-        <h3>Datos de Cliente</h3>
-        {% bootstrap_form formCliente %}
-    </div>
     {% bootstrap_button "Registrar" button_type="submit" button_class="btn-primary" %}
 </form>
 

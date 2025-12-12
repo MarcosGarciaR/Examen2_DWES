@@ -1,0 +1,29 @@
+{% extends "principal.html" %}
+
+{% block titulo %}
+    <title>Ensayos</title>
+{% endblock %}
+
+{% block contenido %}
+<div class="bg-body-secondary" id="botones_cabecera" >
+    <h1>Lista de Ensayos Clínicos</h1>
+    <button class="btn  btn-light"> <a href="{% url "crear_ensayo" %}">Crear Ensayo</a> </button>
+</div>
+
+    <br>
+    {% if texto_busqueda %}
+        <p>{{texto_busqueda}}</p>
+    {% endif %}
+
+    <ul>
+        {% for ensayo in mostrar_ensayos %}
+        <li>
+            {% include 'URLs/ensayos/mostrar_ensayo.html'%}
+        </li>
+        <hr>
+        <br>
+        {% empty %}
+            <p>No hay ensayos disponibles</p>
+        {% endfor %}
+    </ul>
+{% endblock %}

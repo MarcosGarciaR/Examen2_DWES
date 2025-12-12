@@ -1,0 +1,29 @@
+{% extends "principal.html" %}
+
+{% block titulo %}
+    <title>Farmacos</title>
+{% endblock %}
+
+{% block contenido %}
+<div class="bg-body-secondary" id="botones_cabecera" >
+    <h1>Lista de Farmacos Clínicos</h1>
+    <button class="btn  btn-light"> <a href="{% url "crear_farmaco" %}">Crear Farmaco</a> </button>
+</div>
+
+    <br>
+    {% if texto_busqueda %}
+        <p>{{texto_busqueda}}</p>
+    {% endif %}
+
+    <ul>
+        {% for farmaco in mostrar_farmacos %}
+        <li>
+            {% include 'URLs/farmacos/mostrar_farmaco.html'%}
+        </li>
+        <hr>
+        <br>
+        {% empty %}
+            <p>No hay farmacos disponibles</p>
+        {% endfor %}
+    </ul>
+{% endblock %}

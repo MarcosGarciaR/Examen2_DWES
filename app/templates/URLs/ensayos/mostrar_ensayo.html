@@ -1,0 +1,30 @@
+<div>
+    <h2>{{ ensayo.nombre }}</h2>
+    <p><strong>Descripción:</strong> {{ ensayo.descripcion }}</p>
+    <p><strong>Fármaco:</strong> {{ ensayo.farmaco }}</p>
+    <p><strong>Pacientes Mayores:</strong> {{ ensayo.pacientes }}</p>
+    <p><strong>Nivel de Seguimiento:</strong> {{ ensayo.nivel_seguimiento }}</p>
+    <p><strong>Fecha de Inicio:</strong> {{ ensayo.fecha_inicio }}</p>
+    <p><strong>Fecha de Fin:</strong> {{ ensayo.fecha_fin }}</p>
+
+    <p>Activo: 
+        {% if ensayo.activo %}
+            Sí
+        {% else %}
+            No
+        {% endif %}
+    </p>
+
+    <div class="row btn-group">
+        <div class="mb-2">
+        <button type="button" class="btn btn-outline-primary">
+                <a href="{% url 'editar_ensayo' ensayo.id %}"><span>Editar</span></a>
+        </button>
+        <form action="{% url 'eliminar_ensayo' ensayo.id %}" method="post">
+                {% csrf_token %}
+                <buttonclass="btn btn-danger"type="submit"><span>Eliminar</span></button>
+        </form>
+        </div>
+        </div>
+
+</div>
